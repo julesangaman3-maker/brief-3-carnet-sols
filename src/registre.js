@@ -88,6 +88,7 @@ export function creerObservation(saisie) {
 export function ajouterObservation(observations, saisie) {
   const erreurs = verifierObservation(saisie, observations);
 
+  
   if (erreurs.length > 0) {
     return erreurs;
   }
