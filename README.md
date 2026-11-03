@@ -46,4 +46,5 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 ## Auteur
 
-✏️ *Prénom NOM, compte GitHub. Entraide : avec qui, sur quoi.*
+N'DIAMOI ANGAMAN JULES CHRIST
+j'ai utilisé le site https://developer.mozilla.org/en-US/docs/Web/JavaScript : pour faire la recherche sur les different code dont j"avais des incomprehension sur la strucure.
