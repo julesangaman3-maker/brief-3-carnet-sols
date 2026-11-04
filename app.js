@@ -15,8 +15,19 @@ function afficherAcueil() {
   console.log('-----------------------------------------------------------------------------------');
   console.log('Ferme pédagogique');
   console.log('-----------------------------------------------------------------------------------');
-} 
+}
 
+function afficherMenu() {
+  console.log('');
+  console.log('---------------------------------------------------------------------------------------');
+  console.log('1. Ajouter une observation');
+  console.log('2.Lister les observations ');
+  console.log('3.Rechercher (point, parcelle, texture)');
+  console.log('4.Tier par pH');
+  console.log('5.Synthèse des observation'); 
+  console.log('0.Quittere');
+  console.log('Votre choix :')
+}
 
 
 
