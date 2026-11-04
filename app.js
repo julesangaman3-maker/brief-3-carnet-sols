@@ -78,6 +78,46 @@ async function ajouter(observations) {
   console.log(`Observation ${saisie.id} ajoutée. le carnet compte ${observations.length} observation`)
 }
 
+//Choix 3: recherche par point , parcelle ou texture.
+async function rechecher(observations) {
+  console.log('----Rechercher----');
+  console.log('1.Par point(identifiant)');
+  console.log('2. Par parcelle');
+  console.log('3.Les observations d\'une texture');
+  const sousChoix = await demander('Votre choux :');
+  if (sousChoix === null) return;
+
+  switch (sousChoix) {
+    case '1': {
+      const saisie = await demander('Point:');
+      if (saisie === null) return;
+      const id = saisie.toUppercase;
+      const observation = trouverParId(observations, id);
+      console.log(observation === undefined ? `Observation ${id} introuvable.` : formaterObservation(observation));
+      break;
+    }
+    case '2': {
+      const saisie = await demander('Parcellle :');
+      if (saisie === null) return;
+      const parcelle = saisie.toUppercase();
+      const trouvees = filtrerParParcelle(observations, parcelle);
+      console.log(`${trouvees.length} observation(s) sur la parcelle ${parcelle} :`);
+      console.log(listerObservations(trouvees));
+      break;
+    }
+    case '4': {
+      const saisie = await demander('texture :');
+      if (saisie === null) return;
+      const texture = saisie.toUppercase();
+      console.log(`${trouvees.length} observation(s) de texture ${tetxture}:`);
+      break;
+    }
+    default:
+      console.log('Choix inconnu : retour au menu.')
+  }
+
+}
+
 
 
 
