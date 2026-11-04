@@ -24,10 +24,28 @@ function afficherMenu() {
   console.log('2.Lister les observations ');
   console.log('3.Rechercher (point, parcelle, texture)');
   console.log('4.Tier par pH');
-  console.log('5.Synthèse des observation'); 
+  console.log('5.Synthèse des observation');
   console.log('0.Quittere');
   console.log('Votre choix :')
 }
+// --------------------Actions---------------------------------------------------------------------------
+// choix 1 : poser les cinq questions, verifier, ajouter, enregistrer.
+async function ajouter(question) {
+  console.log('--- Ajouter une observation---');
+
+  const id = await demander('point observé (ex. S11) : s11');
+  if (id === null) return;
+  const parcelle = await demander('parcelle (ex. P1) :p6');
+  if (parcelle === null) return;
+  const texture = await demander(`texture(${TEXTURES.join(',')}) :limoneux`);
+  if (texture === null) return;
+  const pH = await demander(`pH (nombre de 0 à 14, sans unité, virgule accepté) : 5,8`)
+  if (pH === null) return;
+  const etatHumidite = await demander(`Etat d'humidité (${HUMIDITES.join(',')}) :Humidité `);
+  if (etatHumidite === null) return;
+}
+
+
 
 
 
