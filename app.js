@@ -156,6 +156,29 @@ function synthese(observations) {
 
 }
 
+//------------------Programme principal---------------------------
+async function main() {
+  ouvrirSaisie();
+  afficherAcueil();
+
+}
+// Chargement des données : si ca échou, on continue avec le carnet vide.
+let observations = [];
+try {
+  observations = await changerJson(FICHIER_DONNEES);
+  console.log(`${observations.length} observations(s) chargée(s) depuis  ${FICHIER_DONNEES}`);
+} catch (erreur) {
+  console.log(`Impossible de lire ${FICHIER_DONNEES}: ${erreur.message}. le carnet démarre vide`);
+  observations = []
+}
+
+let continuer = true;
+while (continuer) {
+  afficherMenu();
+  const choix = await demander('Votre choix : ')
+
+}
+
 
 
 
