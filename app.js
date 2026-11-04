@@ -126,12 +126,34 @@ async function trier(observation) {
   const sousChoix = await demander('Votre choi: ');
   if (sousChoix === null) return;
 
-  if(sousChoix === '1') {
+  if (sousChoix === '1') {
     console.log(listerObservations(trierParPh(observation)));
   } else {
     console.log(`Choix inconnu ; retour menu`);
-
   }
+}
+// Choix 5 : synthèse.
+function synthese(observations) {
+  console.log('-----synthèse des observations-----');
+  console.log(`Nombre d'observation : ${observations.length}`);
+
+  const bornes = phMinMax(observations);
+  if (bornes === null) {
+    console.log("pH minimum et maximum : aucune donnée");
+  } else {
+    console.log("Observation par texture : ");
+    for (const [texture, nombre] of Odject.entrie(compterParTexture(observations))) {
+      console.log(`${texture} : ${nombre}`);
+    }
+    const aDiscuter = pointsADiscuter(observations, SEUIL_PH_A_DISCUTER);
+    console.log(`Point à discuter la coach(pH < ${SEUIL_PH_A_DISCUTER}) : ${aDiscuter.length}`);
+    for (const observation of aDiscuter) {
+      console.log(`${formaterObservation(observation)}`);
+    }
+  }
+  console.log(`Rappels : le pH est sans unité. Aucune moyenne de pH n\' est calculée (échelle logarithmiqe). `);
+  console.log(`Ces point ne sont pas un disgnostic de fertilisation : ils servent à préparer l'echange avec le coach.`)
+
 }
 
 
