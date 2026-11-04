@@ -3,8 +3,7 @@
 > Projet individuel du SAS DFS, brief 3 (sujet : [SUJET.md](SUJET.md)). Remplacez chaque ✏️ par votre texte, puis supprimez cette ligne.
 
 ## Contexte
-
-✏️ *En cinq à huit phrases : qui utilise l'outil (son métier, son geste professionnel), son besoin, ce qu'il saisit, ce que le programme lui affiche, ce que l'outil ne fait pas.*
+L'outil est destiné à l'équipe de la ferme pédagogique , qui revèle des point de sol sur le terrain. Son geste professionnel consiste à observer un point  avec la fiche de terrain, puis à noter sa texture, son pH et son état d'humidité. Son besoin de conserver ces relevés, de retrouver rapidement les points concernés et de repérer les valeurs à vérifier avec l'agronome.L'utilisateur saisit un identifiant de point, une classe de texture une valeur croissant si besoin, et un état d'humidité. Le programme affiche la liste des observations, triées par pH croissant si besoin, et peut se limiter à une selection de point. Il signale aussi les saisies refusées et permet de corriger un champ d'une observation existante. En revanche, l'outil ne produit aucun diagnostic de fertilisation et ne remplace pas l'avis de l'agronome. Il aide seulement à organiser les relevés et à préparer la discution.
 
 ## Prérequis et lancement
 
@@ -23,14 +22,14 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 ✏️ *Cochez seulement ce qui marche : `- [x]`.*
 
-- [ ] Données lues et enregistrées dans `donnees/observations.json`
-- [ ] Ajouter une observation, saisies invalides refusées sans arrêter le programme
-- [ ] Lister les observations, message si le carnet est vide
-- [ ] Rechercher par point ou par parcelle ; filtrer par texture
-- [ ] Trier par pH
-- [ ] Synthèse : pH minimum et maximum, nombre par texture, points à discuter (pH < 5,5)
-- [ ] Bonus : supprimer et modifier une observation (choix 6 et 7)
-- [ ] Bonus : tri par pH décroissant, texture la plus fréquente
+- [ x] Données lues et enregistrées dans `donnees/observations.json`
+- [ x] Ajouter une observation, saisies invalides refusées sans arrêter le programme
+- [ x] Lister les observations, message si le carnet est vide
+- [ x] Rechercher par point ou par parcelle ; filtrer par texture
+- [ x] Trier par pH
+- [ x] Synthèse : pH minimum et maximum, nombre par texture, points à discuter (pH < 5,5)
+- [ x] Bonus : supprimer et modifier une observation (choix 6 et 7)
+- [ x] Bonus : tri par pH décroissant, texture la plus fréquente
 
 ## Données
 
