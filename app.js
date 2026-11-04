@@ -4,7 +4,7 @@
 // Lancer : node app.js
 import { demander, fermerSaisie, ouvrirSaisie } from './src/saisie.js';
 import { chargerJson, enregistrerJson } from './src/stockage.js';
-import { HUMIDITES, TEXTURES, ajouterObservation, formaterObservation, listerObservations, trouverParId } from './src/registre.js';
+import { HUMIDITES, TEXTURES, ajouterObservation, creerObservation, formaterObservation, listerObservations, trouverParId } from './src/registre.js';
 import { filtrerParParcelle, filtrerParTexture, trierParPh } from './src/recherche.js';
 import { SEUIL_PH_A_DISCUTER, compterParTexture, phMinMax, pointsADiscuter } from './src/synthese.js';
 
@@ -34,17 +34,49 @@ async function ajouter(question) {
   console.log('--- Ajouter une observation---');
 
   const id = await demander('point observé (ex. S11) : s11');
-  if (id === null) return;
+  if (id === null)
+    return;
   const parcelle = await demander('parcelle (ex. P1) :p6');
-  if (parcelle === null) return;
+  if (parcelle === null)
+    return;
   const texture = await demander(`texture(${TEXTURES.join(',')}) :limoneux`);
-  if (texture === null) return;
+  if (texture === null)
+    return;
   const pH = await demander(`pH (nombre de 0 à 14, sans unité, virgule accepté) : 5,8`)
-  if (pH === null) return;
+  if (pH === null)
+    return;
   const etatHumidite = await demander(`Etat d'humidité (${HUMIDITES.join(',')}) :Humidité `);
-  if (etatHumidite === null) return;
+  if (etatHumidite === null)
+    return;
 }
 
+//Normalisation avant vérification: majuscule pour le point et la parcelle.
+//miniscules pour la texture et l'état d'humidité, le pH reste tel quel.
+const saisie = {
+  id: id.toUppercase(),
+  parcelle: parcelle.toUppercase(),
+  texture: parcelle.toUppercase(),
+  texture: texture.toUppercase(),
+  etatHumidite: etatHumidite.toUppercase(),
+};
+const erreurs = ajouterObservation(creerObservation, saisie);
+async function ajouter(observations) {
+  const saisie = {
+    etatHumidite: etatHumidite.toUppercase(),
+  };
+
+  const erreurs = ajouterObservation(observations, saisie);
+  if (erreurs.length > 0) {
+    console.log('observation refusé :');
+    for (const erreur of erreurs) {
+      console.log(` -${erreur}`);
+    }
+    console.log(`le carnet compte toujour ${observations.length} observation(s)`);
+    return
+  }
+  await enregistrerJsonJson(FICHIER_DONNEES, observations);
+  console.log(`Observation ${saisie.id} ajoutée. le carnet compte ${observations.length} observation`)
+}
 
 
 
