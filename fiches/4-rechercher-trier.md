@@ -1,4 +1,4 @@
-# 4. Rechercher et trier
+==4. Rechercher et trier
 
 **Vos fichiers :** `src/recherche.js`, puis `app.js` (choix 3 et 4) · **Vos tests :** `npm run test:recherche` (5 tests fournis)
 
