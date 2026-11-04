@@ -28,12 +28,15 @@ export function supprimerObservation(observations, id) {
 // Erreurs : identifiant introuvable · champ 'id' (non modifiable) · champ absent de CHAMPS_MODIFIABLES
 //           · valeur refusée par les règles de l'ajout.
 export function modifierObservation(observations, id, champ, valeur) {
-  throw new Error('TODO Bonus : coder modifierObservation dans src/bonus.js');
+  
 }
+//throw new Error('TODO Bonus : coder modifierObservation dans src/bonus.js');
+
 
 // Renvoie une COPIE triée par pH décroissant. Le tableau reçu ne doit pas changer d'ordre.
 export function trierParPhDecroissant(observations) {
-  throw new Error('TODO Bonus : coder trierParPhDecroissant dans src/bonus.js');
+
+  //throw new Error('TODO Bonus : coder trierParPhDecroissant dans src/bonus.js');
 }
 
 // Renvoie { texture, nombre } pour la texture la plus fréquente, ou null si la liste est vide.
