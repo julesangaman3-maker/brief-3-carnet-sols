@@ -129,8 +129,8 @@ async function trier(observation) {
   if(sousChoix === '1') {
     console.log(listerObservations(trierParPh(observation)));
   } else {
-    console.log(`Choix inconnu ; retour menu`):
-    
+    console.log(`Choix inconnu ; retour menu`);
+
   }
 }
 
