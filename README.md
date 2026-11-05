@@ -57,4 +57,4 @@ Pas de diagnostic : le carnet repère des valeurs à discuter, mais ne produit a
 ## Auteur
 
 N'DIAMOI ANGAMAN JULES CHRIST
-j'ai utilisé le site https://developer.mozilla.org/en-US/docs/Web/JavaScript : pour faire la recherche sur les different code dont j"avais des incomprehension sur la strucure.
+j'ai utilisé le site https://developer.mozilla.org/en-US/docs/Web/JavaScript : pour faire la recherche sur les different code dont j"avais des incomprehension sur la strucure et l'ia claude pour la comprenhension des certains fonction du projet.
