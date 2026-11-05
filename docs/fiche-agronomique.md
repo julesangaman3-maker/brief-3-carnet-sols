@@ -9,7 +9,7 @@
 
 **Un lien possible avec l'eau ou les plantes**, pour l'une des deux :
 
-- constat (ce que dit le carnet) : le point S02 présente une texture limoneuse et un état d'humidité intermédiaire, avec un pH de 6,1.
+- constat (ce que dit le carnet) : le point S01 présente une texture sableuse et un état d'humidité sec, avec un pH de 5,2.
 - hypothèse (au conditionnel) et comment la vérifier : la texture sableuse pourrait favoriser un drainage relativement rapide de l'eau et expliquer en partie le faible état d'humidité observé. Cette hypothèse pourrait être vérifiée en réalisant plusieurs relevés d'humidité à différents moments et après une pluie ou un arrosage.
 
 **Deux limites du carnet** (une seule observation par point, classes d'exercice, pas de moment du relevé, seuil de 5,5 simple repère…) :
