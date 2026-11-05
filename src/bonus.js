@@ -73,9 +73,9 @@ export function trierParPhDecroissant(observations) {
 // En cas d'égalité, la première texture rencontrée l'emporte.
 // Exemple : { texture: 'limoneux', nombre: 4 }
 export function textureLaPlusFrequente(observations) {
-  //if(!observations || observation.length ===0) {
-  //  return null;
-  //}
+  if (!observations || observation.length === 0) {
+    return null;
+  }
   const comptage = compterParTexture(observations);
   let textureMax = null;
   let nombreMax = 0;
