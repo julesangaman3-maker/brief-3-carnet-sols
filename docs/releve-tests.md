@@ -22,11 +22,11 @@ Nombre de texture:
 
 | Action                  | Attendu                                  | Obtenu                               | Testeur |
 | ---                     | ---                                      | ---                                  | ---     |
-|  un ajout valid         | Observation ajoutée au tableau           |                                      | |
+|  un ajout valid         | Observation ajoutée au tableau reuissie   |                                      | |
 |chaque règle refusée     | Saisi refusée                            |                                      ||
 |Une recherche introuvable| Classement par odre croissant            |                                      | |
 | chaque tri              | Trié  avec succès                        |                                      | |
-|la synthèse              | Affichage des statistique des observation|                                                  |                  |
-|un choix inconnu         | Le message d'erreur                      |                                      |         |
+|la synthèse              | Affichage des statistique des observation|                                                         |                                     |
+|un choix inconnu         | Le message d'erreur                  |                                           |                                      |
 
 **Sur un autre poste** (`git clone`, `node app.js`, `npm test`, en suivant le README) : ✏️
