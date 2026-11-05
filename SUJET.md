@@ -117,7 +117,7 @@ Textures et états d'humidité sont des **classes d'exercice**. Un pH **strictem
 
 - pH minimum **4,8**, maximum **7,6** ; **3** sableux, **4** limoneux, **3** argileux ;
 - points à discuter : **S01, S04, S06, S09** ; un pH de 5,5 n'en fait pas partie ;
-- `S04` : P2, sableux, pH 4,8, sec ; `S99` : introuvable ; le tri par pH commence par `S04` ;
+- `S04` : P2, sableux, pH 4,8, sec ; `S99` : introuvable ;  ;
 - un pH de 14 est admis ; 14,1, -1 et une saisie vide sont refusés ; un état d'humidité hors des trois modalités est refusé ; sur un carnet vide, minimum et maximum affichent « aucune donnée ».
 
 ## À rendre

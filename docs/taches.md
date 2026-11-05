@@ -5,13 +5,14 @@
 | Tâche | Prévu | Fait le | Preuve |
 | --- | --- | --- | --- |
 | Poste et dépôt prêts ; besoin compris ; documents commencés | | | |
-| Fiche 2 : lire et écrire le JSON | | | |
-| Fiche 3 : ajouter et lister ; choix 1 et 2 ; erreurs | | | |
-| Fiche 4 : rechercher et trier ; choix 3 et 4 | | | |
-| Fiche 5 : synthèse ; choix 5 | | | |
-| Tests par un camarade ; mes propres tests | | | |
-| Fiche agronomique ; README ; documents | | | |
-| Dépôt cloné et lancé ailleurs ; démonstration répétée | | | |
-| Bonus | | | |
+| Fiche 2 : lire et écrire le JSON |03/11/2026 | 03/11/2026| Thu Nov 5 03:12:24 2026|
+| Fiche 3 : ajouter et lister ; choix 1 et 2 ; erreurs |03/11/2026 |03/11/2026 |Date:   Wed Nov 4 22:25:19 2026  |
+| Fiche 4 : rechercher et trier ; choix 3 et 4 |04/11/2026 |04/11/2026| Wed Nov 4 20:23:10 2026  |
+| Fiche 5 : synthèse ; choix 5 | 04/11/2026|04/11/2026 | Wed Nov 4 20:23:10 2026 |
+| Tests par un camarade ; mes propres tests | 04/11/2026| 04/11/2026| Wed Nov 4 22:25:19 2026|
+| Fiche agronomique ; README ; documents | 04/11/2026|04/11/2026 |Wed Thu Nov 5 03:12:24 2026  |
+| Dépôt cloné et lancé ailleurs ; démonstration répétée | //2026| //2026| |
+| Bonus | 04/11/2026|04/11/2026 |  Wed Nov 4 22:25:19 2026 |
 
-**Blocages** (le message exact, ce que j'ai essayé, la solution) : ✏️
+**Blocages** (le message exact, ce que j'ai essayé, la solution) : 
+ 

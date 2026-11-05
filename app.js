@@ -7,6 +7,7 @@ import { chargerJson, enregistrerJson } from './src/stockage.js';
 import { HUMIDITES, TEXTURES, ajouterObservation, formaterObservation, listerObservations, trouverParId } from './src/registre.js';
 import { filtrerParParcelle, filtrerParTexture, trierParPh } from './src/recherche.js';
 import { SEUIL_PH_A_DISCUTER, compterParTexture, phMinMax, pointsADiscuter } from './src/synthese.js';
+import { CHAMPS_MODIFIABLES, modifierObservation, supprimerObservation } from './src/bonus.js';
 
 const FICHIER_DONNEES = 'donnees/observations.json';
 
@@ -32,6 +33,8 @@ function afficherMenu() {
   console.log('3. Rechercher (point, parcelle, texture)');
   console.log('4. Trier par pH');
   console.log('5. Synthèse des observations');
+  console.log('6.Supprimer une observation');
+  console.log('7.Modifier une observation')
   console.log('0. Quitter');
 }
 
@@ -187,6 +190,52 @@ function synthese() {
   console.log("Rappels : le pH est sans unité. Aucune moyenne de pH n'est calculée (échelle logarithmique).");
   console.log("Ces points ne sont pas un diagnostic de fertilisation : ils servent à préparer l'échange avec le coach.");
 }
+//---------------------------------------------------------------------------
+// Choix 6; Bonus (Supprimer observation)
+//---------------------------------------------------------------------------
+async function supprimer(observations) {
+  const saisie = await demander('Identifiant: ');
+  if (saisie === null) return;
+  const id = saisie.toUpperCase();
+
+  const supprimee = supprimerObservation(observations, id);
+  if (supprimee === undefined) {
+    console.log('' + id + 'introuvable.');
+    return;
+  }
+  await enregistrerJson(FICHIER_DONNEES, observations);
+  console.log('Observation' + id + 'supprimée.Le carnet compte' + observations.length + 'observation(s).');
+}
+//--------------------------------------------------------------------------
+// Choix 7: Bonus (modifier le champ d'une observation)
+//--------------------------------------------------------------------------
+async function modifier() {
+  const saisieId = await demander('Identifiant (Nouvelle valeur: ');
+  if (saisieId === null) return;
+  const id = saisieId.toUpperCase();
+
+  const champ = await demander(`Champ à modifier '  (${CHAMPS_MODIFIABLES.join(',')}) : `);
+  if (champ === null) return;
+  const valeurSaisie = await demander('Nouvelle valeur: ');
+  if (valeurSaisie === null) return;
+
+
+  let valeur = valeurSaisie;
+  if (champ === 'parcelle') valeur = valeurSaisie.toLowerCase();
+  if (champ === 'texture' || champ === 'etatHumidite') valeur = valeurSaisie.toLowerCase();
+
+  const erreurs = modifierObservation(observations, id, champ, valeur);
+  if (erreurs.length > 0) {
+    console.log('Modification refusée :')
+    for (const erreur of erreurs) {
+      console.log(' -' + erreurs);
+      await enregistrerJson(FICHIER_DONNEES, observations);
+      return
+    }
+
+    console.log('Observatio' + id + 'modofiée');
+  }
+}
 
 // ---------------------------------------------------------------------------
 // 7) Le programme principal
@@ -235,6 +284,16 @@ async function main() {
           break;
         case '5':
           synthese();
+          break;
+        case '6':
+          await supprimer();
+          break;
+        case '7':
+          await modifier();
+          break;
+        case '0':
+          console.log('Au revoir !');
+          continuer = false;
           break;
         default:
           console.log('Choix inconnu : « ' + choix + ' ». Tapez un chiffre du menu.');
